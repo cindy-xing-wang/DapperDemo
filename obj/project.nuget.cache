@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "jhtIDWZHZS39viICkAByXdTigc2SAGKmeprek10BCp5c+USKYT8pisBTZa2OjV9xVDGmhkRKja1Ow3aJXVc7xA==",
+  "dgSpecHash": "JfDS9cz0uj8L4eBxI48P0CQEVCnbCdKmMDvRbJ6PpaSVr5nmGHSRLMZ0ISsis3hpr3ZajkbSNZmNgupcgFs8YQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Cindy Wang\\source\\repos\\WebApplicationDapper\\WebApplicationDapper.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Cindy Wang\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Cindy Wang\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Cindy Wang\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Cindy Wang\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\5.0.7\\microsoft.aspnetcore.mvc.razor.extensions.5.0.7.nupkg.sha512",

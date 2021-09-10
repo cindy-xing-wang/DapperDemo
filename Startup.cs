@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplicationDapper.Data;
+using WebApplicationDapper.Repository;
 
 namespace WebApplicationDapper
 {
@@ -27,7 +28,9 @@ namespace WebApplicationDapper
         {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            //services.AddScoped<ICompanyRepository, CompanyRepositoryEF>();
             services.AddControllersWithViews();
         }
 

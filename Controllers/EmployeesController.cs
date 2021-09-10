@@ -11,60 +11,49 @@ using WebApplicationDapper.Repository;
 
 namespace WebApplicationDapper.Controllers
 {
-    public class CompaniesController : Controller
+    public class EmployeesController : Controller
     {
         private readonly ICompanyRepository _compRepo;
+        private readonly IEmployeeRepository _empRepo;
 
-        public CompaniesController(ICompanyRepository compRepo)
+        [BindProperty]
+        public Employee Employee { get; set; }
+
+        public EmployeesController(ICompanyRepository compRepo, IEmployeeRepository empRepo)
         {
             _compRepo = compRepo;
+            _empRepo = empRepo;
         }
 
-        // GET: Companies
+        // GET: Employees
         public async Task<IActionResult> Index()
         {
-            return View( _compRepo.GetAll());
+            return View(_empRepo.GetAll());
         }
 
-        // GET: Companies/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var company = _compRepo.Find(id.GetValueOrDefault());
-            if (company == null)
-            {
-                return NotFound();
-            }
-
-            return View(company);
-        }
-
-        // GET: Companies/Create
+        // GET: Employees/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Companies/Create
+        // POST: Employees/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CompanyId,Name,Address,City,State,PostalCode")] Company company)
+        public async Task<IActionResult> CreatePOST()
         {
             if (ModelState.IsValid)
             {
-                _compRepo.Add(company);
+                _empRepo.Add(Employee);
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(Employee);
         }
 
-        // GET: Companies/Edit/5
+        // GET: Employees/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,35 +61,35 @@ namespace WebApplicationDapper.Controllers
                 return NotFound();
             }
 
-            var company = _compRepo.Find(id.GetValueOrDefault());
-            if (company == null)
+            Employee = _empRepo.Find(id.GetValueOrDefault());
+            if (Employee == null)
             {
                 return NotFound();
             }
-            return View(company);
+            return View(Employee);
         }
 
-        // POST: Companies/Edit/5
+        // POST: Employees/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CompanyId,Name,Address,City,State,PostalCode")] Company company)
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Address,City,State,PostalCode")] Employee company)
         {
-            if (id != company.CompanyId)
+            if (id != Employee.EmployeeId)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                _compRepo.Update(company);
+                _empRepo.Update(Employee);
                 return RedirectToAction(nameof(Index));
             }
-            return View(company);
+            return View(Employee);
         }
 
-        // GET: Companies/Delete/5
+        // GET: Employees/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -108,7 +97,7 @@ namespace WebApplicationDapper.Controllers
                 return NotFound();
             }
 
-            _compRepo.Remove(id.GetValueOrDefault());
+            _empRepo.Remove(id.GetValueOrDefault());
             return RedirectToAction(nameof(Index));
         }
 

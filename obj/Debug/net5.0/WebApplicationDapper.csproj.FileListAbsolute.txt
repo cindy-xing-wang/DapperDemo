@@ -434,3 +434,7 @@ C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Vie
 C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Companies\Details.cshtml.g.cs
 C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Companies\Edit.cshtml.g.cs
 C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Companies\Index.cshtml.g.cs
+C:\Users\Cindy Wang\source\repos\WebApplicationDapper\bin\Debug\net5.0\Dapper.dll
+C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Employees\Create.cshtml.g.cs
+C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Employees\Edit.cshtml.g.cs
+C:\Users\Cindy Wang\source\repos\WebApplicationDapper\obj\Debug\net5.0\Razor\Views\Employees\Index.cshtml.g.cs
