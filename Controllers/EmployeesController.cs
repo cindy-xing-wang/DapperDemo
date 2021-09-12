@@ -32,17 +32,20 @@ namespace WebApplicationDapper.Controllers
         }
 
 
-        // GET: Employees/Create
         public IActionResult Create()
         {
+            IEnumerable<SelectListItem> companyList = _compRepo.GetAll().Select(i => new SelectListItem
+            {
+                Text = i.Name,
+                Value = i.CompanyId.ToString()
+            });
+            ViewBag.CompanyList = companyList;
             return View();
         }
 
-        // POST: Employees/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ActionName("Create")]
         public async Task<IActionResult> CreatePOST()
         {
             if (ModelState.IsValid)

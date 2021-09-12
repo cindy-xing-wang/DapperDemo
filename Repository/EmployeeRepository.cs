@@ -30,19 +30,19 @@ namespace WebApplicationDapper.Repository
 
         public Employee Find(int id)
         {
-            var sql = "SELECT * FROM Companies WHERE EmployeeId = @EmployeeId";
+            var sql = "SELECT * FROM Employees WHERE EmployeeId = @EmployeeId";
             return db.Query<Employee>(sql, new { @EmployeeId = id }).Single();
         }
 
         public List<Employee> GetAll()
         {
-            var sql = "SELECT * FROM Companies";
+            var sql = "SELECT * FROM Employees";
             return db.Query<Employee>(sql).ToList();
         }
 
         public void Remove(int id)
         {
-            var sql = "DELETE FROM Companies WHERE EmployeeId = @Id";
+            var sql = "DELETE FROM Employees WHERE EmployeeId = @Id";
             db.Execute(sql, new { id });
         }
 
